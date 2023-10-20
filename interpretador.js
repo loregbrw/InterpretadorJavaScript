@@ -16,6 +16,7 @@ fs.readFile(file, 'utf8', (err, data) => {
 const commands = [];
 var data = [];
 var index = 0;
+var flag = true;
 
 const loader = (script) => {
 	script.forEach((cmd) => {
@@ -27,11 +28,13 @@ const loader = (script) => {
 		formatArgs(args);
 	});
 
+	console.log(data);
 	run();
 };
 
 const formatArgs = (args) => {
 	if (!args.includes('"')) {
+		console.log(args);
 		data.push(eval(args));
 		return;
 	}
@@ -44,6 +47,10 @@ const formatArgs = (args) => {
 
 const run = () => {
 	commands.forEach((cmd) => {
+		if (cmd == 'if') {
+			ifFunc();
+		}
+
 		if (cmd == 'print') {
 			print();
 		}
@@ -59,10 +66,22 @@ const print = () => {
 		const end = index + data[index] + 1;
 		const word = data.slice(start, end).join('');
 		index += data[index] + 1;
-		console.log(word);
+
+		if (flag) {
+			console.log(word);
+		}
+
 		return;
 	}
 
-	console.log(data[index]);
+	if (flag) {
+		console.log(data[index]);
+	}
+	
+	index++;
+};
+
+const ifFunc = () => {
+	flag = data[index];
 	index++;
 };

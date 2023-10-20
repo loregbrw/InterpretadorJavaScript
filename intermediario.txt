@@ -6,7 +6,7 @@ print "B";
 print "C";
 
 print "A";
-if 10 < 18;
-print "B";
 if 20 < 18;
+print "B";
+if 10 < 18;
 print "C";
