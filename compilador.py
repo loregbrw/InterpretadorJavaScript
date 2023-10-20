@@ -1,15 +1,18 @@
+import sys
 import re
+
+file = "./intermediario.txt"
 
 # Leitura do .char e separacao de linha
 aux = ""
 
-openChar = open("./charisma.char", "r")
+openChar = open(sys.argv[1], "r")
 
 char = openChar.readlines()
 
 for linha in char:
     aux += linha
-open("./intermediario.txt", 'w+')
+open(file, 'w+')
 
 charSplit = aux.replace("\n", "")
 charSplit = re.split(r'[;:]', charSplit)
@@ -20,19 +23,19 @@ for i in charSplit:
         arg = i.split("(")[1].split(")")[0]
         if arg[0] == '"' and arg[- 1] == '"':
             ler = arg[1:-1]
-            openTxt = open("./intermediario.txt", "a")
+            openTxt = open(file, "a")
             openTxt.write('print "{}";'.format(ler))
         else:
             ler = arg
-            openTxt = open("./intermediario.txt", "a")
+            openTxt = open(file, "a")
             openTxt.write('print {};'.format(ler))
     elif "if" in i:
         arg = i.split("(")[1].split(")")[0]
         if arg[0] == '"' and arg[- 1] == '"':
             ler = arg[1:-1]
-            openTxt = open("./intermediario.txt", "a")
+            openTxt = open(file, "a")
             openTxt.write('if "{}";'.format(ler))
         else:
             ler = arg
-            openTxt = open("./intermediario.txt", "a")
+            openTxt = open(file, "a")
             openTxt.write('if {};'.format(ler))

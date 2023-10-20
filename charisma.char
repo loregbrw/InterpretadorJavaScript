@@ -9,6 +9,11 @@ show("B");
 show("C");
 
 show("A");
+show("A");
+show("A");
+show("A");
+show("A");
+show("A");
 
 if (10 < 18):
     show("B");

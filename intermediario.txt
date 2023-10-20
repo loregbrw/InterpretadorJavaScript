@@ -1,1 +1,1 @@
-print "Ai calica do ceu!\nTa pronto guri";if 2 < 3;print 1 + 5 + 8 + 4;
+print "Hello world";print 2 + 3 + 5;print "A";print "B";print "C";print "A";print "A";print "A";print "A";print "A";print "A";if 10 < 18;print "B";if 20 < 18;print "C";
