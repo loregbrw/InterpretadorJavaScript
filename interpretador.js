@@ -28,13 +28,11 @@ const loader = (script) => {
 		formatArgs(args);
 	});
 
-	console.log(data);
 	run();
 };
 
 const formatArgs = (args) => {
 	if (!args.includes('"')) {
-		console.log(args);
 		data.push(eval(args));
 		return;
 	}
@@ -64,8 +62,25 @@ const print = () => {
 	) {
 		const start = index + 1;
 		const end = index + data[index] + 1;
-		const word = data.slice(start, end).join('');
+		let word = data.slice(start, end);
 		index += data[index] + 1;
+
+		let charFlag = false;
+		word = word.map((c, i) => {
+			if (charFlag) {
+				charFlag = false;
+				return;
+			}
+
+			if (c == '\\' && word[i + 1] == 'n') {
+				charFlag = true;
+				return '\n';
+			}
+
+			return c;
+		});
+
+		word = word.join('');
 
 		if (flag) {
 			console.log(word);
@@ -77,7 +92,7 @@ const print = () => {
 	if (flag) {
 		console.log(data[index]);
 	}
-	
+
 	index++;
 };
 
