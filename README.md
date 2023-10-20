@@ -4,49 +4,49 @@ Criar um arquivo e passe como parametro para o compilador python
 Apos isso deve ser criado um arquivo intermediario.txt
 Então rode o intepretador javascript
 
-## Função show():
+## Função banana():
 
-Descrição: A função show() é usada para imprimir mensagens na saída. Ela pode imprimir strings, expressões matemáticas ou valores.
+Descrição: A função banana() é usada para imprimir mensagens na saída. Ela pode imprimir strings, expressões matemáticas ou valores.
 Sintaxe:
-show(mensagem) - Imprime a mensagem fornecida como argumento.
+banana(mensagem) - Imprime a mensagem fornecida como argumento.
 Exemplos:
 
 ```
-show("Hello world"); - Imprime "Hello world" na saída.
-show(2 + 3 + 5); - Avalia a expressão 2 + 3 + 5 (resultando em 10) e imprime o valor 10 na saída.
+banana("Hello world"); - Imprime "Hello world" na saída.
+banana(2 + 3 + 5); - Avalia a expressão 2 + 3 + 5 (resultando em 10) e imprime o valor 10 na saída.
 ```
 
-Instrução if:
+Instrução bananana:
 
-Descrição: A instrução if é usada para controlar o fluxo do programa com base em uma condição. Se a condição fornecida for verdadeira, o bloco de código dentro do if será executado.
+Descrição: A instrução bananana é usada para controlar o fluxo do programa com base em uma condição. Se a condição fornecida for verdadeira, o bloco de código dentro do bananana será executado.
 Sintaxe:
-if (condição): - Inicia um bloco condicional com base na condição especificada.
+bananana (condição): - Inicia um bloco condicional com base na condição especbanananaicada.
 Exemplo:
 
 ```
 
-    if (10 < 18):
-        show("B");
+    bananana (10 < 18):
+        banana("B");
 
 ```
 
-A condição 10 < 18 é verdadeira, então o bloco de código dentro do if é executado, e "B" é impresso na saída.
+A condição 10 < 18 é verdadeira, então o bloco de código dentro do bananana é executado, e "B" é impresso na saída.
 
 ```
 
-    show("Hello world");  // Imprime "Hello world"
+    banana("Hello world");  // Imprime "Hello world"
 
-    show(2 + 3 + 5);     // Calcula 2 + 3 + 5 (resultando em 10) e imprime 10
+    banana(2 + 3 + 5);     // Calcula 2 + 3 + 5 (resultando em 10) e imprime 10
 
-    show("A");            // Imprime "A"
-    show("B");            // Imprime "B"
-    show("C");            // Imprime "C"
-    show("A");            // Imprime "A"
+    banana("A");            // Imprime "A"
+    banana("B");            // Imprime "B"
+    banana("C");            // Imprime "C"
+    banana("A");            // Imprime "A"
 
-    if (10 < 18):
-        show("B");        // A condição é verdadeira, então "B" é impresso
+    bananana (10 < 18):
+        banana("B");        // A condição é verdadeira, então "B" é impresso
 
-    if (20 < 18):
-        show("C");        // A condição é falsa, nada é impresso
+    bananana (20 < 18):
+        banana("C");        // A condição é falsa, nada é impresso
 
 ```

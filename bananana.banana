@@ -1,0 +1,14 @@
+banana("Hello world");
+
+banana(2 + 3 + 5);
+
+banana("A");
+banana("B");
+banana("C");
+banana("A");
+
+bananana (10 < 18):
+    banana("B");
+
+bananana (20 < 18):
+    banana("C");
