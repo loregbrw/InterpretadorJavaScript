@@ -13,3 +13,4 @@ readFile(arquivo, 'utf8', (err, data) => {
 
 commands = ["print", "guardar", "Oii"];
 data = [];
+	
