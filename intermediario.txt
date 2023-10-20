@@ -1,13 +1,1 @@
-print "Hello world";
-
-print 2 + 3 + 5;
-
-print "A";
-print "B";
-print "C";
-
-print "A";
-if 10 < 18;
-print "B";
-if 20 < 18;
-print "C";
+print "Hello world";print 2 + 3 + 5;print "A";print "B";print "C";print "A";if 10 < 18;print "B";if 20 < 18;print "C";
