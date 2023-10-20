@@ -1,7 +1,13 @@
-const txt = ['print 0', 'guardarN 1 + 2', 'print 1', 'guardarS Oiii'];
+const txt = [
+	'print 0',
+	'guardarS Oii',
+	'print 1',
+	'guardarN 1 + 5',
+];
 
 const commands = [];
 const data = [];
+let f = 0;
 
 const loader = () => {
 	txt.forEach((cmd) => {
