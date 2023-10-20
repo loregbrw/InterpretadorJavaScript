@@ -1,9 +1,10 @@
-Função show():
+## Função show():
 
 Descrição: A função show() é usada para imprimir mensagens na saída. Ela pode imprimir strings, expressões matemáticas ou valores.
 Sintaxe:
 show(mensagem) - Imprime a mensagem fornecida como argumento.
 Exemplos:
+
 '''
     show("Hello world"); - Imprime "Hello world" na saída.
     show(2 + 3 + 5); - Avalia a expressão 2 + 3 + 5 (resultando em 10) e imprime o valor 10 na saída.
@@ -15,12 +16,17 @@ Descrição: A instrução if é usada para controlar o fluxo do programa com ba
 Sintaxe:
 if (condição): - Inicia um bloco condicional com base na condição especificada.
 Exemplo:
-'''
+
+'''Charisma
+
     if (10 < 18):
         show("B");
 '''
+
 A condição 10 < 18 é verdadeira, então o bloco de código dentro do if é executado, e "B" é impresso na saída.
-'''
+
+'''Charisma
+
     show("Hello world");  // Imprime "Hello world"
 
     show(2 + 3 + 5);     // Calcula 2 + 3 + 5 (resultando em 10) e imprime 10
