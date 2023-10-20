@@ -1,0 +1,7 @@
+show("Oii");
+show(1 + 5);
+
+if (2 > 4):
+    show("Ta errado");
+else
+    show("Ta certo");
