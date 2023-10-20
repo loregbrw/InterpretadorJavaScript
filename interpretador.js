@@ -1,58 +1,66 @@
-const txt = [
-	'print 0',
-	'guardarS Hello world',
-	'print 1',
-	'guardarN 2 + 3 + 5',
-];
+import fs from 'fs';
+
+const file = 'intermediario.txt';
+
+fs.readFile(file, 'utf8', (err, data) => {
+	if (err) {
+		console.error(`Error: ${err}`);
+		return;
+	}
+	data = data.replace(/[\n\r]/g, '');
+	data = data.split(';');
+	data = data.filter((item) => item.trim() !== '');
+	loader(data);
+});
 
 const commands = [];
-const data = [];
-let f = 0;
+var data = [];
+var index = 0;
 
-const loader = () => {
-	txt.forEach((cmd) => {
+const loader = (script) => {
+	script.forEach((cmd) => {
 		const splited = cmd.split(' ');
 		const func = splited[0];
-		const args = splited.splice(1);
+		const args = splited.splice(1).join(' ');
 
-		if (func == 'guardarN') {
-			guardarN(args.join(''));
-		} else if (func == 'guardarS') {
-			guardarS(args.join(' '));
-		} else {
-			commands.push(cmd);
-		}
+		commands.push(func);
+		formatArgs(args);
 	});
+
+	console.log(data);
+	run();
 };
 
-const print = (args) => {
-	args.forEach((index) => {
-		index = Number.parseInt(index);
+const formatArgs = (args) => {
+	if (!args.includes('"')) {
+		data.push(eval(args));
+		return;
+	}
 
-		console.log(data[index]);
-	});
-};
+	args = args.replace(/"/g, '');
+	const letters = [args.length, ...args];
 
-const guardarN = (args) => {
-	const calc = eval(args);
-	guardarS(calc);
-};
-
-const guardarS = (args) => {
-	data.push(args);
+	data = [...data, ...letters];
 };
 
 const run = () => {
 	commands.forEach((cmd) => {
-		const splited = cmd.split(' ');
-		const func = splited[0];
-		const args = splited.slice(1);
-
-		if (func == 'print') {
-			print(args);
+		if (cmd == 'print') {
+			print();
 		}
 	});
 };
 
-loader();
-run();
+const print = () => {
+	if (
+		typeof data[index] === 'number' &&
+		typeof data[index + 1] === 'string'
+	) {
+		const word = data.slice(index + 1, data[index] + 1).join('');
+		index += data[index] + 1;
+		console.log(word);
+		return;
+	}
+
+	console.log(data[index++]);
+};
