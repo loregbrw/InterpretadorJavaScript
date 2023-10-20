@@ -1,1 +1,2 @@
-Testantado
+print("Oii");
+print(1 + 5);
