@@ -27,7 +27,6 @@ const loader = (script) => {
 		formatArgs(args);
 	});
 
-	console.log(data);
 	run();
 };
 
@@ -56,11 +55,14 @@ const print = () => {
 		typeof data[index] === 'number' &&
 		typeof data[index + 1] === 'string'
 	) {
-		const word = data.slice(index + 1, data[index] + 1).join('');
+		const start = index + 1;
+		const end = index + data[index] + 1;
+		const word = data.slice(start, end).join('');
 		index += data[index] + 1;
 		console.log(word);
 		return;
 	}
 
-	console.log(data[index++]);
+	console.log(data[index]);
+	index++;
 };
