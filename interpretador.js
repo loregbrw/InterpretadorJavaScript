@@ -1,8 +1,8 @@
 const txt = [
 	'print 0',
-	'guardarS Oii',
+	'guardarS Hello world',
 	'print 1',
-	'guardarN 1 + 5',
+	'guardarN 2 + 3 + 5',
 ];
 
 const commands = [];
@@ -11,14 +11,14 @@ let f = 0;
 
 const loader = () => {
 	txt.forEach((cmd) => {
-		const splited = cmd.split(' ', 1);
+		const splited = cmd.split(' ');
 		const func = splited[0];
-		const args = splited[1];
+		const args = splited.splice(1);
 
 		if (func == 'guardarN') {
-			guardarN(args);
+			guardarN(args.join(''));
 		} else if (func == 'guardarS') {
-			guardarS(args);
+			guardarS(args.join(' '));
 		} else {
 			commands.push(cmd);
 		}

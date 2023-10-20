@@ -1,7 +1,13 @@
-show("Oii");
-show(1 + 5);
+show("Hello world");
 
-if (2 > 4):
-    show("Ta errado");
-else
-    show("Ta certo");
+show(2 + 3 + 5);
+
+show("A");
+show("B");
+show("C");
+
+show("A");
+if (10 < 18):
+    show("B");
+if (20 < 18):
+    show("C");
